@@ -124,3 +124,19 @@
   li{
     margin-left: 10px;
   }
+  .edu-skill-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+  }
+  
+  .edu-skill-container > div {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .edu-skill-container h3 {
+    margin-bottom: 10px;
+  }
+  
