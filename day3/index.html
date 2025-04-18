@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Aayush Bahadur Pradhan" />
+  <link rel="stylesheet" href="./src/output.css" />
+  <title>My Portfolio</title>
+</head>
+<body>
+    <header class="bg-primary text-white py-4 sticky top-0 z-[1000] shadow-md-light">
+        <nav class="flex justify-between items-center px-5">
+          <div class="text-xl font-bold text-white hover:text-[rgb(105,255,125)]">My Portfolio</div>
+          <button class="hamburger hidden text-2xl bg-none border-none text-white cursor-pointer md:block" id="hamburger">&#9776;</button>
+          <ul class="hidden md:flex list-none gap-4" id="navLinks">
+            <li><a href="#about" class="text-white px-4 py-2 rounded hover:bg-hoverGray">About</a></li>
+            <li><a href="#education" class="text-white px-4 py-2 rounded hover:bg-hoverGray">Education</a></li>
+            <li><a href="#projects" class="text-white px-4 py-2 rounded hover:bg-hoverGray">Projects</a></li>
+            <li><a href="#certificates" class="text-white px-4 py-2 rounded hover:bg-hoverGray">Certificates</a></li>
+            <li><a href="#contact" class="text-white px-4 py-2 rounded hover:bg-hoverGray">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+
+  <main>
+    <section class="intro text-center" id="home">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          Hello, I'm <span class="text-accent">Aayush Bahadur Pradhan</span>
+        </h1>
+        <p class="subtitle text-lg text-gray-600">A passionate Full Stack & Mobile App Developer</p>
+        <div class="profile-pic mt-5">
+          <img 
+            src="/images/own.jpg" 
+            alt="Aayush Bahadur Pradhan's Profile Picture"
+            class="w-44 h-44 rounded-full object-cover mx-auto mt-5"
+          />
+        </div>
+      </section>
+      
+
+      <section id="about" class="mb-16 bg-white p-6 rounded-lg border-2 border-gray-100 shadow-md-dark">
+        <h2 class="text-2xl font-semibold text-center mb-4 relative before:content-['★'] before:text-yellow-400 before:-left-1.5 before:text-xl">
+          About Me
+        </h2>
+        <div class="about-content space-y-4 text-gray-800 leading-relaxed">
+          <p>
+            I am a detail-oriented software developer experienced in building scalable full-stack and mobile applications using technologies like 
+            <strong>Flutter</strong>, <strong>React</strong>, <strong>Node.js</strong>, and <strong>Firebase</strong>.
+          </p>
+          <p>
+            I thrive in collaborative environments, love to learn, and enjoy working on innovative and challenging projects.
+          </p>
+        </div>
+      </section>
+      
+
+      <section id="education" class="mb-16 bg-white p-6 rounded-lg border-2 border-gray-100 shadow-md-dark">
+        <h2 class="text-2xl font-semibold text-center mb-4 relative before:content-['★'] before:text-yellow-400 before:-left-1.5 before:text-xl">
+          Education
+        </h2>
+        <div class="space-y-5 text-gray-800">
+          <div>
+            <h3 class="text-xl font-semibold">Coventry University</h3>
+            <p class="text-sm text-gray-600">BSc. (Hons) in Computing</p>
+            <span class="text-sm text-gray-500">Sept 2021 – Nov 2024</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Little Angels’ Secondary School</h3>
+            <p class="text-sm text-gray-600">Higher Secondary Education</p>
+            <span class="text-sm text-gray-500">Completed: Dec 2021</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Little Angels’ School</h3>
+            <p class="text-sm text-gray-600">SEE</p>
+            <span class="text-sm text-gray-500">Completed: Jun 2019</span>
+          </div>
+        </div>
+      </section>
+      
+
+      <section id="skills" class="mb-16 bg-white p-6 rounded-lg border-2 border-gray-100 shadow-md-dark">
+        <h2 class="text-2xl font-semibold text-center mb-4 relative before:content-['★'] before:text-yellow-400 before:-left-1.5 before:text-xl">
+          Skills
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 text-gray-800">
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Technical Skills</h3>
+            <ul class="list-disc ml-6 space-y-1">
+              <li><strong>Languages:</strong> JavaScript, Python, Dart, C#, Java, SQL, HTML & CSS</li>
+              <li><strong>Web:</strong> React, Vue.js, Express, Django</li>
+              <li><strong>Mobile:</strong> Flutter, React Native</li>
+              <li><strong>Cloud & Backend:</strong> Firebase, AWS, Google Cloud</li>
+              <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, Firestore</li>
+              <li><strong>Design:</strong> Figma, Photoshop, Illustrator</li>
+              <li><strong>Tools:</strong> Git, GitHub, Vercel, Firebase Hosting</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Soft Skills</h3>
+            <ul class="list-disc ml-6 space-y-1">
+              <li>Project Management</li>
+              <li>Teamwork & Leadership</li>
+              <li>Time Management</li>
+              <li>Effective Communication</li>
+              <li>Critical Thinking</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+
+      <section id="projects" class="mb-16 bg-white p-6 rounded-lg border-2 border-gray-100 shadow-md-dark">
+        <h2 class="text-2xl font-semibold text-center mb-6 relative before:content-['★'] before:text-yellow-400 before:-left-1.5 before:text-xl">
+          Projects
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg shadow-md-dark overflow-hidden text-center hover:scale-105 transition-transform">
+            <img src="/images/momo1.png" alt="Momo Food App" class="w-full h-40 object-contain bg-gray-100" />
+            <p class="py-2 font-semibold">Momo Food App (MERN)</p>
+            <a href="https://momo-delivery-jy86.vercel.app/" target="_blank" class="inline-block bg-accent hover:bg-hoverAccent text-white py-2 px-4 rounded mb-4">
+              View Project
+            </a>
+          </div>
+          <div class="bg-white rounded-lg shadow-md-dark overflow-hidden text-center hover:scale-105 transition-transform">
+            <img src="/images/shal.png" alt="Helmet Shop" class="w-full h-40 object-contain bg-gray-100" />
+            <p class="py-2 font-semibold">Shalimar Helmet Shop (MERN + Flutter)</p>
+            <a href="https://shalimar-helmet-riwg.vercel.app/" target="_blank" class="inline-block bg-accent hover:bg-hoverAccent text-white py-2 px-4 rounded mb-4">
+              View Project
+            </a>
+          </div>
+          <div class="bg-white rounded-lg shadow-md-dark overflow-hidden text-center hover:scale-105 transition-transform">
+            <img src="/images/art3.png" alt="Art Exchange" class="w-full h-40 object-contain bg-gray-100" />
+            <p class="py-2 font-semibold">Art Exchange (MERN + Flutter)</p>
+            <a href="https://shalimar-helmet-riwg.vercel.app/" target="_blank" class="inline-block bg-accent hover:bg-hoverAccent text-white py-2 px-4 rounded mb-4">
+              View Project
+            </a>
+          </div>
+          <div class="bg-white rounded-lg shadow-md-dark overflow-hidden text-center hover:scale-105 transition-transform">
+            <img src="/images/car_escape.png" alt="Car Escape" class="w-full h-40 object-contain bg-gray-100" />
+            <p class="py-2 font-semibold">Car Escape (Unity, C++, Python)</p>
+            <a href="#" class="inline-block bg-accent hover:bg-hoverAccent text-white py-2 px-4 rounded mb-4">
+              View Project
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      
+
+      <section id="certificates" class="mb-16 bg-white p-6 rounded-lg border-2 border-gray-100 shadow-md-dark">
+        <h2 class="text-2xl font-semibold text-center mb-6 relative before:content-['★'] before:text-yellow-400 before:-left-1.5 before:text-xl">
+          Certificates
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="cert-card">
+            <a href="https://app.dataquest.io/view_cert/NGLAOVB8XR0MWHVIDKKK" target="_blank">
+              <img src="/images/certificate1.png" alt="Data Analysis with Python Certificate" class="object-contain h-40 w-full" />
+              <p class="text-lg font-semibold mt-2">Data Analysis with Python</p>
+            </a>
+          </div>
+          <div class="cert-card">
+            <a href="https://app.dataquest.io/view_cert/BDZ52H2MI1G4NOLZT1YE" target="_blank">
+              <img src="/images/certificate2.png" alt="Advanced Data Cleaning Certificate" class="object-contain h-40 w-full" />
+              <p class="text-lg font-semibold mt-2">Advanced Data Cleaning in Python</p>
+            </a>
+          </div>
+          <div class="cert-card">
+            <a href="https://app.dataquest.io/view_cert/D8KQKGALDXX68ZVO0OP9" target="_blank">
+              <img src="/images/certificate3.png" alt="SQL Data Sources Certificate" class="object-contain h-40 w-full" />
+              <p class="text-lg font-semibold mt-2">Working with SQL Data Sources</p>
+            </a>
+          </div>
+          <div class="cert-card">
+            <a href="https://app.dataquest.io/view_cert/LZ92347HXWW594VVJ6WW" target="_blank">
+              <img src="/images/certificate4.png" alt="Data Cleaning Certificate" class="object-contain h-40 w-full" />
+              <p class="text-lg font-semibold mt-2">Data Cleaning and Analysis in Python</p>
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <section class="mb-16 bg-white p-6 rounded-lg border-2 border-gray-100 shadow-md-dark">
+        <h2 class="text-2xl font-semibold text-center mb-4 relative before:content-['★'] before:text-yellow-400 before:-left-1.5 before:text-xl">
+          Profiles
+        </h2>
+        <div class="scroll-wrapper overflow-x-scroll scroll-smooth">
+          <div class="scroll-gallery flex gap-5">
+            <div class="scroll-item">
+              <a href="https://public.tableau.com/app/profile/aayush.pradhan7748/vizzes" target="_blank">
+                <img src="/images/Tableau-Logo.jpg" alt="Tableau Profile" />
+              </a>
+            </div>
+            <div class="scroll-item">
+              <a href="https://www.figma.com/design/98cYL2Yp1XhLXRueW56SB3/mob" target="_blank">
+                <img src="/images/figma_logo.png" alt="Figma Profile" />
+              </a>
+            </div>
+            <div class="scroll-item">
+                <a href="https://public.tableau.com/app/profile/aayush.pradhan7748/vizzes" target="_blank">
+                  <img src="/images/Tableau-Logo.jpg" alt="Tableau Profile" />
+                </a>
+              </div>
+              <div class="scroll-item">
+                <a href="https://www.figma.com/design/98cYL2Yp1XhLXRueW56SB3/mob" target="_blank">
+                  <img src="/images/figma_logo.png" alt="Figma Profile" />
+                </a>
+              </div>
+              <div class="scroll-item">
+                  <a href="https://public.tableau.com/app/profile/aayush.pradhan7748/vizzes" target="_blank">
+                    <img src="/images/Tableau-Logo.jpg" alt="Tableau Profile" />
+                  </a>
+                </div>
+                <div class="scroll-item">
+                    <a href="https://www.figma.com/design/98cYL2Yp1XhLXRueW56SB3/mob" target="_blank">
+                      <img src="/images/figma_logo.png" alt="Figma Profile" />
+                    </a>
+                  </div>
+                  <div class="scroll-item">
+                      <a href="https://public.tableau.com/app/profile/aayush.pradhan7748/vizzes" target="_blank">
+                        <img src="/images/Tableau-Logo.jpg" alt="Tableau Profile" />
+                      </a>
+                    </div>
+          </div>
+        </div>
+      </section>
+      
+      
+
+      <section id="contact" class="mb-16 bg-white p-6 rounded-lg border-2 border-gray-100 shadow-md-dark">
+        <h2 class="text-2xl font-semibold text-center mb-6 relative before:content-['★'] before:text-yellow-400 before:-left-1.5 before:text-xl">
+          Contact Me
+        </h2>
+        <form action="#" method="post" class="max-w-xl mx-auto space-y-4">
+          <div>
+            <label for="fname" class="block font-semibold">First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="First Name" required class="w-full p-2 border border-gray-300 rounded" />
+          </div>
+          <div>
+            <label for="lname" class="block font-semibold">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Last Name" required class="w-full p-2 border border-gray-300 rounded" />
+          </div>
+          <div>
+            <label for="email" class="block font-semibold">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required class="w-full p-2 border border-gray-300 rounded" />
+          </div>
+          <div>
+            <label for="message" class="block font-semibold">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required class="w-full p-2 border border-gray-300 rounded"></textarea>
+          </div>
+          <button type="submit" class="bg-primary text-white px-6 py-2 rounded hover:bg-hoverGray">Send</button>
+        </form>
+        <div class="social-links mt-6 flex justify-center gap-6">
+          <a href="https://www.instagram.com/aayush_pradhan01/" target="_blank" class="icon-container">
+            <img src="/images/instagram-icon.png" alt="Instagram">
+          </a>
+          <a href="https://www.facebook.com/aayush.pradhan.3" target="_blank" class="icon-container">
+            <img src="/images/facebook-icon.png" alt="Facebook">
+          </a>
+          <a href="https://www.linkedin.com/in/aayush-pradhan-aa2a11236" target="_blank" class="icon-container">
+            <img src="/images/linkedin-icon.png" alt="LinkedIn">
+          </a>
+        </div>
+      </section>
+      
+  </main>
+  <footer>
+    <p>&copy; 2025 Aayush Bahadur Pradhan. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
