@@ -4,7 +4,6 @@ const charCount = document.getElementById("charCount");
 const formMessage = document.getElementById("formMessage");
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
-const themeToggleBtn = document.getElementById("themeToggle");
 
 if (hamburger && navLinks) {
   hamburger.addEventListener("click", () => {
@@ -14,28 +13,43 @@ if (hamburger && navLinks) {
 
 if (form) {
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); 
-
+    e.preventDefault();
     const fname = document.getElementById("fname").value.trim();
     const lname = document.getElementById("lname").value.trim();
     const email = document.getElementById("email").value.trim();
     const message = messageInput.value.trim();
 
+    // if (!fname || !lname || !email || !message) {
+    //   alert("Please fill in all fields.");
+    //   return;
+    // }
+
+    // console.log("First Name:", fname);
+    // console.log("Last Name:", lname);
+    // console.log("Email:", email);
+    // console.log("Message:", message);
+
     if (!fname || !lname || !email || !message) {
       alert("Please fill in all fields.");
       return;
     }
-
-    console.log("First Name:", fname);
-    console.log("Last Name:", lname);
-    console.log("Email:", email);
-    console.log("Message:", message);
-
+    
+    const randomId = Math.random().toString(36).substring(2, 10); 
+    
+    console.log(`Form Submission [ID: ${randomId}]
+    - First Name: ${fname}
+    - Last Name: ${lname}
+    - Email: ${email}
+    - Message: ${message}`);
+    
     formMessage.classList.remove("hidden");
 
     setTimeout(() => {
       formMessage.classList.add("hidden");
     }, 5000);
+
+    // ✅ Alert added for successful submission
+    alert("Form submitted successfully!");
 
     form.reset();
     charCount.textContent = "0 / 300";
@@ -49,15 +63,36 @@ if (messageInput && charCount) {
   });
 }
 
-if (themeToggleBtn) {
+document.querySelectorAll('.themeToggle').forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
     const html = document.documentElement;
-    themeToggleBtn.addEventListener("click", () => {
-      html.classList.toggle("dark");
-      const isDark = html.classList.contains("dark");
-      themeToggleBtn.textContent = isDark ? "Light Theme" : "Dark Theme";
-      themeToggleBtn.classList.toggle("bg-black", isDark);
-      themeToggleBtn.classList.toggle("text-white", isDark);
-      themeToggleBtn.classList.toggle("bg-white", !isDark);
-      themeToggleBtn.classList.toggle("text-black", !isDark);
+    html.classList.toggle("dark");
+
+    const isDark = html.classList.contains("dark");
+
+    document.querySelectorAll('.themeToggle').forEach((toggleBtn) => {
+      toggleBtn.textContent = isDark ? "Light" : "Dark";
+      toggleBtn.classList.toggle("bg-black", isDark);
+      toggleBtn.classList.toggle("text-white", isDark);
+      toggleBtn.classList.toggle("bg-white", !isDark);
+      toggleBtn.classList.toggle("text-black", !isDark);
     });
+  });
+});
+
+function toggleDropdown() {
+  document.getElementById("mobileDropdown").classList.toggle("hidden");
 }
+
+window.onclick = function (event) {
+  if (!event.target.matches('.dropbtn')) {
+    const dropdowns = document.getElementsByClassName("dropdown-content");
+    for (let i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      if (!openDropdown.classList.contains("hidden")) {
+        openDropdown.classList.add("hidden");
+      }
+    }
+  }
+};

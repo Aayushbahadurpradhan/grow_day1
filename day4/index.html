@@ -9,22 +9,41 @@
   <title>My Portfolio</title>
 </head>
 <body class="bg-white text-white dark:bg-black dark:text-white transition-colors duration-300">
-  <header class="bg-black dark:bg-gray-900 text-white dark:text-white py-4 sticky top-0 z-[1000] shadow-md-light">
+  <header class="bg-black dark:bg-gray-900 text-white py-4 sticky top-0 z-[1000] shadow-md-light">
     <nav class="flex justify-between items-center px-5">
       <div class="text-xl font-bold hover:text-[rgb(105,255,125)]">My Portfolio</div>
-      <button class="hamburger hidden" id="hamburger">&#9776;</button>
-      <button id="themeToggle" class="ml-4 bg-white dark:bg-black text-black dark:text-white px-2 py-1 rounded shadow-md hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-        Toggle Theme
-      </button>
-      <ul class="hidden md:flex list-none gap-4" id="navLinks">
-        <li><a href="#about" class="text-white px-4 py-2 rounded hover:bg-hoverGray">About</a></li>
-        <li><a href="#education" class="text-white px-4 py-2 rounded hover:bg-hoverGray">Education</a></li>
-        <li><a href="#projects" class="text-white px-4 py-2 rounded hover:bg-hoverGray">Projects</a></li>
-        <li><a href="#certificates" class="text-white px-4 py-2 rounded hover:bg-hoverGray">Certificates</a></li>
-        <li><a href="#contact" class="text-white px-4 py-2 rounded hover:bg-hoverGray">Contact</a></li>
+  
+      <div class="hamburger hidden">
+        <button onclick="toggleDropdown()" class="dropbtn bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded focus:outline-none">
+          Menu
+        </button>
+        <div id="mobileDropdown" class="dropdown-content absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg hidden z-50">
+          <a href="#about" class="block px-4 py-2 hover:bg-gray-200">About</a>
+          <a href="#education" class="block px-4 py-2 hover:bg-gray-200">Education</a>
+          <a href="#projects" class="block px-4 py-2 hover:bg-gray-200">Projects</a>
+          <a href="#certificates" class="block px-4 py-2 hover:bg-gray-200">Certificates</a>
+          <a href="#contact" class="block px-4 py-2 hover:bg-gray-200">Contact</a>
+          <a href="#" class="themeToggle" class="block px-4 py-2 hover:bg-gray-200">Toggle Theme</a>
+        </div>
+      </div>
+  
+      <ul class="hidden md:flex list-none gap-4 items-center" id="navLinks">
+        <li>
+          <button class="themeToggle text-white px-4 py-2 rounded hover:bg-hoverGray block">
+            Toggle Theme
+          </button>
+        </li>        
+        <li><a href="#about" class="text-white px-4 py-2 rounded hover:bg-hoverGray block">About</a></li>
+        <li><a href="#education" class="text-white px-4 py-2 rounded hover:bg-hoverGray block">Education</a></li>
+        <li><a href="#projects" class="text-white px-4 py-2 rounded hover:bg-hoverGray block">Projects</a></li>
+        <li><a href="#certificates" class="text-white px-4 py-2 rounded hover:bg-hoverGray block">Certificates</a></li>
+        <li><a href="#contact" class="text-white px-4 py-2 rounded hover:bg-hoverGray block">Contact</a></li>
       </ul>
     </nav>
   </header>
+  
+    
+  
 
   <main>
     <section class="mb-16 primary dark:bg-gray-900 text-gray-800 dark:text-gray-200 p-6 rounded-lg border-2 border-gray-100 shadow-md-dark intro text-center" id="home">
