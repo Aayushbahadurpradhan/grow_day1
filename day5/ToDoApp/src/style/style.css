@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+header {
+  background: #222;
+  color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+.logo:hover {
+  color: rgb(105, 255, 125);
+}
+main {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+section {
+  margin-bottom: 60px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid #eee;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.dark body {
+  background-color: #000;
+  color: #fff;
+}
+
+.dark section {
+  background-color: #1a1a1a;
+  color: #ddd;
+  border-color: #333;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .navbar {
+    @apply w-full flex justify-between items-center px-6 py-4 shadow-md bg-white dark:bg-gray-800;
+  }
+
+  .btn-primary {
+    @apply bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition;
+  }
+
+  .btn-delete {
+    @apply text-red-500 hover:text-red-700 ml-2;
+  }
+
+  .input-task {
+    @apply px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-black dark:text-white w-full;
+  }
+
+  .task-input-box {
+    @apply bg-white dark:bg-gray-800 p-6 rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-md max-w-2xl w-full mx-auto;
+  }
+
+  .task-card {
+    @apply p-4 rounded-lg border border-gray-200 dark:border-gray-700 shadow hover:shadow-lg transition;
+  }
+
+  .task-title {
+    @apply text-xl font-bold text-center;
+  }
+
+  .task-description {
+    @apply text-center my-2 text-gray-700 dark:text-gray-300;
+  }
+
+  .task-footer {
+    @apply flex justify-between items-center mt-4;
+  }
+
+  .task-checkbox {
+    @apply w-5 h-5 rounded-full border-gray-300 checked:bg-blue-600 focus:ring-2 focus:ring-blue-500;
+  }
+
+  .task-delete-btn {
+    @apply text-red-500 hover:text-red-700 text-xl;
+  }
+}
+
+@layer utilities {
+  .shadow-md-dark {
+    @apply shadow-md dark:shadow-gray-900;
+  }
+
+  .transition-theme {
+    @apply transition-colors duration-300;
+  }
+}
