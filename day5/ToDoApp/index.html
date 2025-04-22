@@ -8,31 +8,30 @@
   <script type="module" src="./src/js/main.js"></script>
 </head>
 <body class="bg-white text-black dark:bg-gray-900 dark:text-white min-h-screen">
-    <header class="bg-black dark:bg-gray-900 text-white py-4 sticky top-0 z-[1000] shadow-md-light">
+    <header class="bg-black dark:bg-black text-white py-4 sticky top-0 z-[1000] shadow-md-light">
         <nav class="flex justify-between items-center px-5">
             <div class="text-xl font-bold hover:text-[rgb(105,255,125)]">Todo List</div>
-            <ul class="hidden md:flex list-none gap-4 items-center" id="navLinks">
-                <li><button class="themeToggle text-white px-4 py-2 rounded hover:bg-hoverGray block">Toggle</button></li>
-              </ul>
-    <button id="themeToggle" class="px-4 py-2 rounded bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
-      Toggle Theme
-    </button>
-  </nav>
-    </header>
+            <button id="themeToggle" class="px-4 py-2 rounded bg-gray-900 dark:bg-gray-900 hover:bg-gray-600 dark:hover:bg-gray-600 transition">
+                Toggle
+              </button>
+        </nav>
+      </header>
 
     <main>
 
-  <section class="task-input-box mb-16">
-    <h2 class="text-2xl font-semibold text-center mb-6">Add a Task</h2>
-    <div class="flex flex-col md:flex-row gap-4">
-      <input id="taskTitleInput" class="input-task flex-1" placeholder="Task Title" />
-      <input id="taskDescInput" class="input-task flex-1" placeholder="Task Description" />
-      <button id="addTaskBtn" class="btn-primary rounded">Add</button>
-    </div>
-  </section>
+      <section class="todo-input-box mb-16">
+        <h2 class="text-2xl font-semibold text-center mb-6">Add a todo</h2>
+        <div class="flex flex-col gap-4">
+          <input id="todoTitleInput" class="input-todo" placeholder="todo Title" />      
+          <textarea id="todoDescInput" class="input-todo resize-none h-24" placeholder="todo Description (max 400 characters)" maxlength="400"></textarea>
+          <div class="text-right text-sm text-gray-500 dark:text-gray-400" id="descCounter">0 / 400</div>
+          <button id="addtodoBtn" class="btn-primary rounded self-center mt-2">Add</button>
+        </div>
+      </section>
+      
 
-  <section id="task-cards" class="w-full max-w-7xl mx-auto px-4 mb-16">
-    <div id="taskList" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"></div>
+  <section id="todo-cards" class="w-full max-w-7xl mx-auto px-4 mb-16">
+    <div id="todoList" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"></div>
   </section>
     </main>
 </body>
