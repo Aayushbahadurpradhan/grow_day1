@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex items-center justify-center min-h-screen bg-blue-300">
+    <div class="w-auto bg-gray-300 border rounded-lg shadow-lg p-4 space-y-4 border-black">
+      <input
+        type="text"
+        class="display w-full border rounded px-2 py-2 text-right text-xl bg-gray-50 border-black"
+        readonly
+      />
+      <div class="grid grid-cols-4 gap-6 buttons">
+        <button class="btn operator bg-red-400 border rounded border-black" data-value="AC">AC</button>
+        <button class="btn operator border rounded border-black" data-value="DEL">DEL</button>
+        <button class="btn operator border rounded border-black" data-value="%">%</button>
+        <button class="btn operator border rounded border-black" data-value="/">/</button>
+
+        <button class="btn border rounded border-black" data-value="7">7</button>
+        <button class="btn border rounded border-black" data-value="8">8</button>
+        <button class="btn border rounded border-black" data-value="9">9</button>
+        <button class="btn operator border rounded border-black" data-value="*">*</button>
+
+        <button class="btn border rounded border-black" data-value="4">4</button>
+        <button class="btn border rounded border-black" data-value="5">5</button>
+        <button class="btn border rounded border-black" data-value="6">6</button>
+        <button class="btn operator border rounded border-black" data-value="-">-</button>
+
+        <button class="btn border rounded border-black" data-value="1">1</button>
+        <button class="btn border rounded border-black" data-value="2">2</button>
+        <button class="btn border rounded border-black" data-value="3">3</button>
+        <button class="btn operator border rounded border-black" data-value="+">+</button>
+
+        <button class="btn border rounded border-black" data-value="0">0</button>
+        <button class="btn border rounded border-black" data-value="00">00</button>
+        <button class="btn border rounded border-black" data-value=".">.</button>
+        <button class="btn operator bg-black border rounded border-black text-white" data-value="=">=</button>
+
+        <button class="btn col-span-2 bg-orange-400 operator border rounded border-black" data-value="&&">AND</button>
+        <button class="btn col-span-1 bg-orange-400 operator border rounded border-black" data-value="||">OR</button>
+        <button class="btn col-span-1 bg-orange-400 operator border rounded border-black" data-value="!">NOT</button>
+      </div>
+    </div>
+
+    <script type="module" src="./src/js/script.js"></script>
+  </body>
+</html>
