@@ -3,7 +3,7 @@ const buttons = document.querySelectorAll("button");
 
 let output = "";
 
-const isOperator = (char) => ["%", "*", "/", "-", "+", "&&", "||"].includes(char);
+const isOperator = (char) => ["%", "*", "/", "-", "+", "&&", "||", "!"].includes(char);
 
 const calculate = (value) => {
   if (value === "AC") {
@@ -13,18 +13,17 @@ const calculate = (value) => {
   } else if (value === "=") {
     try {
       const parsed = output
-        .replace(/AND/g, "&&")
-        .replace(/OR/g, "||")
-        .replace(/NOT/g, "!")
-        .replace("%", "/100");
+        .replace(/\bAND\b/gi, "&&")
+        .replace(/\bOR\b/gi, "||")
+        .replace(/\bNOT\b/gi, "!")
+        .replace(/%/g, "/100");
 
       output = eval(parsed).toString();
     } catch {
       output = "Error";
     }
   } else {
-    if (output === "" && (isOperator(value) || value === "&&" || value === "||")) return;
-
+    if (output === "" && isOperator(value)) return;
     output += value;
   }
 
