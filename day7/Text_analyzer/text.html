@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Analyzer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+  <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-xl">
+    <h1 class="text-2xl font-bold mb-4 text-center"> Text Analyzer</h1>
+
+    <textarea id="inputText" class="w-full h-32 p-3 border rounded mb-4" placeholder="Enter your text here..."></textarea>
+
+    <input id="keyword" type="text" class="w-full p-2 border rounded mb-4" placeholder="Enter keyword to search (e.g., Naruto )">
+
+    <button onclick="analyzeText()" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+      Analyze
+    </button>
+
+    <div id="result" class="mt-6 text-gray-800 space-y-2">
+      <p><strong>Total Characters:</strong> <span id="charCount">-</span></p>
+      <p><strong>Total Words:</strong> <span id="wordCount">-</span></p>
+      <p><strong>Occurrences:</strong> <span id="occurrences">-</span></p>
+      <p><strong>Capitalized Words:</strong> <span id="capitalWords">-</span></p>
+      <p><strong>Numbers:</strong> <span id="numberCount">-</span></p>
+      <p><strong>Special Symbols:</strong> <span id="specialCount">-</span></p>
+      <p><strong>Other Characters:</strong> <span id="otherCount">-</span></p>
+    </div>
+  </div>
+
+  <script src="./analyzer.js"></script>
+</body>
+</html>
