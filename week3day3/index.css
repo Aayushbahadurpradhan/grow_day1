@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.light {
+  background-color: #ffffff;
+  color: #3a3a3a;
+}
+
+.dark {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+button {
+  padding: 8px 16px;
+  margin: 8px;
+  cursor: pointer;
+}
