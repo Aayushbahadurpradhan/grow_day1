@@ -3,3 +3,4 @@ node_modules/
 ./node_modules
 ./day3/node_modules
 /images/
+week3day5/src/components/weatherService.js
