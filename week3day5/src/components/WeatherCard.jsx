@@ -13,11 +13,9 @@ export default function WeatherCard({ weather, unit }) {
           <i className="fas fa-location-dot mr-2"></i>
           {weather.city}
         </h2>
-
         <p className="text-5xl font-semibold text-gray-800 dark:text-white">
           {temp}
         </p>
-
         <p className="capitalize text-gray-600 dark:text-gray-300 text-lg">
           <i className="fas fa-cloud mr-2 text-blue-500">   .   </i>
           {weather.description}
