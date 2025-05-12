@@ -1,0 +1,17 @@
+body {
+  font-family: sans-serif;
+  padding: 1rem;
+}
+
+input, button {
+  margin: 0.5rem;
+}
+
+.modal {
+  position: fixed;
+  background: white;
+  top: 20%;
+  left: 30%;
+  padding: 2rem;
+  border: 1px solid #ccc;
+}
