@@ -2,7 +2,7 @@ import {
   useGetUsersQuery,
   useAddUserMutation,
   useDeleteUserMutation,
-  jsonPlaceholderApi, // <-- import the API object for cache update
+  jsonPlaceholderApi, // Import the api slice
 } from '../api/jsonPlaceholderApi'
 import { useDispatch } from 'react-redux'
 
@@ -15,14 +15,12 @@ export default function Users() {
 
   const handleAdd = async () => {
     const newUser = {
-      id: Date.now(), // generate fake ID
+      id: Date.now(), 
       name: 'New User',
       email: 'new@example.com',
     }
 
     await addUser(newUser)
-
-    // 🧠 Manually update cache
     dispatch(
       jsonPlaceholderApi.util.updateQueryData('getUsers', undefined, (draft) => {
         draft.push(newUser)
@@ -32,8 +30,6 @@ export default function Users() {
 
   const handleDelete = async (id) => {
     await deleteUser(id)
-
-    // 🧠 Manually remove from cache
     dispatch(
       jsonPlaceholderApi.util.updateQueryData('getUsers', undefined, (draft) =>
         draft.filter((user) => user.id !== id)
