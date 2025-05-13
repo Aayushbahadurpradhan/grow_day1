@@ -7,7 +7,6 @@ export const jsonPlaceholderApi = createApi({
   refetchOnReconnect: true,
   refetchOnFocus: true,
   endpoints: (builder) => ({
-    // Users
     getUsers: builder.query({
       query: () => 'users',
       providesTags: ['Users'],
@@ -27,7 +26,6 @@ export const jsonPlaceholderApi = createApi({
       }),
       invalidatesTags: ['Users'],
     }),
-
   }),
 })
 
@@ -37,3 +35,30 @@ export const {
   useDeleteUserMutation,
   
 } = jsonPlaceholderApi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
