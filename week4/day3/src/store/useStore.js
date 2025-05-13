@@ -1,13 +1,25 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { shallow } from "zustand/shallow";
-
 const useStore = create(
   persist(
     (set, get) => ({
       tasks: [],
+      events: [],
       history: [],
       future: [],
+      selectedDate: new Date(),
+      isModalOpen: false,
+      view: "week",
+      step: 1,
+      totalSteps: 3,
+      formData: {
+        title: "",
+        date: "",
+        startTime: "09:00",
+        endTime: "10:00",
+      },
+      validationErrors: {},
       addTask: (text) => {
         const task = { id: Date.now(), text, completed: false };
         set((state) => ({
@@ -50,8 +62,6 @@ const useStore = create(
           future: future.slice(1),
         });
       },
-      events: [],
-      selectedDate: new Date(),
       addEvent: (event) =>
         set((state) => ({
           events: [...state.events, { ...event, id: Date.now() }],
@@ -61,11 +71,26 @@ const useStore = create(
           events: state.events.filter((e) => e.id !== id),
         })),
       setSelectedDate: (date) => set({ selectedDate: date }),
-      isModalOpen: false,
       openModal: () => set({ isModalOpen: true }),
       closeModal: () => set({ isModalOpen: false }),
-      view: "week", 
-      setView: (newView) => set({ view: newView }), 
+      setView: (newView) => set({ view: newView }),
+      setStep: (step) => set({ step }),
+      updateData: (data) =>
+        set((state) => ({
+          formData: { ...state.formData, ...data },
+        })),
+      setValidationErrors: (errors) => set({ validationErrors: errors }),
+      resetForm: () =>
+        set(() => ({
+          formData: {
+            title: "",
+            date: "",
+            startTime: "09:00",
+            endTime: "10:00",
+          },
+          step: 1,
+          validationErrors: {},
+        })),
       reset: () =>
         set(() => ({
           tasks: [],
@@ -74,7 +99,15 @@ const useStore = create(
           events: [],
           selectedDate: new Date(),
           isModalOpen: false,
-          view: "week", 
+          view: "week",
+          formData: {
+            title: "",
+            date: "",
+            startTime: "09:00",
+            endTime: "10:00",
+          },
+          step: 1,
+          validationErrors: {},
         })),
     }),
     {

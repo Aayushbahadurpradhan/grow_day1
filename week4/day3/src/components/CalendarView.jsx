@@ -4,6 +4,7 @@ import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import useStore from "../store/useStore";
 import * as dateFns from "date-fns";
+import EventModal from "./EventModal"; 
 
 const locales = {
   "en-US": dateFns,
@@ -25,33 +26,26 @@ export default function CalendarView() {
     openModal,
     view,
     setView,
+    isModalOpen,
   } = useStore();
 
   useEffect(() => {
-    if (
-      !selectedDate ||
-      !(selectedDate instanceof Date) ||
-      isNaN(selectedDate)
-    ) {
+    if (!selectedDate || !(selectedDate instanceof Date) || isNaN(selectedDate)) {
       setSelectedDate(new Date());
     }
   }, [selectedDate, setSelectedDate]);
+
+  const handleNavigate = (newDate) => {
+    setSelectedDate(newDate);
+  };
+
   const formattedEvents = events.map((event) => ({
     id: event.id || Date.now(),
     title: event.title,
     start: new Date(event.start),
     end: new Date(event.end),
   }));
-  console.log("Formatted events:", formattedEvents); // Debuging  output
-  const formatDateForInput = (date) => {
-    if (!date || !(date instanceof Date) || isNaN(date)) {
-      return "";
-    }
-    const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const day = date.getDate().toString().padStart(2, "0");
-    return `${year}-${month}-${day}`;
-  };
+
   return (
     <div className="p-4 border rounded">
       <h2 className="text-xl font-semibold mb-2">Calendar ({view})</h2>
@@ -62,15 +56,6 @@ export default function CalendarView() {
         >
           ➕ Add Event
         </button>
-        <input
-          type="date"
-          value={formatDateForInput(selectedDate)}
-          onChange={(e) => {
-            const newDate = new Date(e.target.value);
-            setSelectedDate(newDate);
-          }}
-          className="border px-2 py-1 rounded"
-        />
       </div>
       <Calendar
         localizer={localizer}
@@ -78,11 +63,13 @@ export default function CalendarView() {
         startAccessor="start"
         endAccessor="end"
         view={view}
-        onView={setView} 
-        onNavigate={setSelectedDate} 
+        onView={setView}
+        onNavigate={handleNavigate} 
         style={{ height: 700 }}
         selectable
       />
+
+      {isModalOpen && <EventModal />}
     </div>
   );
 }

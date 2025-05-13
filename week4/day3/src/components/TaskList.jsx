@@ -1,9 +1,14 @@
+
 import React from "react";
 import { useTaskStore } from "../store/useStore";
 import { shallow } from "zustand/shallow";
 
 export default function TaskList() {
-  const tasks = useTaskStore((state) => state.tasks, shallow);
+  const tasks = useTaskStore((state) => state.tasks, shallow); 
+  const completedCount = useTaskStore(
+    (state) => state.tasks.filter((task) => task.completed).length,
+    shallow
+  );
   const addTask = useTaskStore((state) => state.addTask);
   const toggleTask = useTaskStore((state) => state.toggleTask);
   const deleteTask = useTaskStore((state) => state.deleteTask);
@@ -33,6 +38,12 @@ export default function TaskList() {
         <button type="button" onClick={undo} className="bg-yellow-400 text-white px-3 py-1 rounded">Undo</button>
         <button type="button" onClick={redo} className="bg-green-500 text-white px-3 py-1 rounded">Redo</button>
       </form>
+
+      <div className="mb-4">
+        <span className="font-semibold">Completed tasks: </span>
+        <span>{completedCount}</span>
+      </div>
+
       <ul className="space-y-2">
         {tasks.map((t) => (
           <li key={t.id} className="flex items-center gap-2">
