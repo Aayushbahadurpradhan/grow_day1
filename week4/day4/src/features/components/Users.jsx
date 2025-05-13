@@ -2,7 +2,7 @@ import {
   useGetUsersQuery,
   useAddUserMutation,
   useDeleteUserMutation,
-  jsonPlaceholderApi, // Import the api slice
+  jsonPlaceholderApi,
 } from '../api/jsonPlaceholderApi'
 import { useDispatch } from 'react-redux'
 
@@ -15,9 +15,9 @@ export default function Users() {
 
   const handleAdd = async () => {
     const newUser = {
-      id: Date.now(), 
+      id: Math.random(),
       name: 'New User',
-      email: 'new@example.com',
+      email: `new${Math.random().toString(36).substring(2, 8)}@example.com`,
     }
 
     await addUser(newUser)
@@ -38,19 +38,21 @@ export default function Users() {
   }
 
   return (
-    <div>
-      <h2>Users</h2>
-      <button onClick={refetch}>Manual Refetch</button>
-      <button onClick={handleAdd}>Add User</button>
+    <div className="space-y-4">
+      <h2 className="text-xl font-semibold">Users</h2>
+      <div className="space-x-2">
+        <button onClick={refetch} className="bg-blue-500 text-white px-4 py-1 rounded">Manual Refetch</button>
+        <button onClick={handleAdd} className="bg-green-500 text-white px-4 py-1 rounded">Add User</button>
+      </div>
 
-      {isLoading && <p>Loading...</p>}
-      {error && <p>Error fetching users</p>}
+      {isLoading && <p className="text-gray-500">Loading...</p>}
+      {error && <p className="text-red-500">Error fetching users</p>}
 
-      <ul>
+      <ul className="space-y-2">
         {users?.map((user) => (
-          <li key={user.id}>
-            {user.name} ({user.email}){' '}
-            <button onClick={() => handleDelete(user.id)}>Delete</button>
+          <li key={user.id} className="flex justify-between items-center bg-gray-100 p-2 rounded">
+            <span>{user.name} ({user.email})</span>
+            <button onClick={() => handleDelete(user.id)} className="bg-red-500 text-white px-2 py-0.5 rounded">Delete</button>
           </li>
         ))}
       </ul>
