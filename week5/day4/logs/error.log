@@ -1,0 +1,7 @@
+[2025-05-20T04:20:22.296Z] POST /clients - 400 - Duplicate email
+[2025-05-20T04:20:24.988Z] POST /clients - 400 - Duplicate email
+[2025-05-20T04:22:55.033Z] POST /clients - 400 - Duplicate email
+[2025-05-20T04:24:43.232Z] GET /clients/554841 - 404 - Client not found
+[2025-05-20T04:24:45.040Z] GET /clients/554841 - 404 - Client not found
+[2025-05-20T04:24:51.212Z] GET /clients/554841 - 404 - Client not found
+[2025-05-20T04:24:52.363Z] GET /clients/554841 - 404 - Client not found
