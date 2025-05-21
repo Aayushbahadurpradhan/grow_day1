@@ -11,4 +11,5 @@ router.get("/", getAllClients);
 router.post("/", addClient);
 router.get("/:id", getClientById);
 
+
 module.exports = router;

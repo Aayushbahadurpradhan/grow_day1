@@ -5,3 +5,20 @@
 [2025-05-20T04:24:45.040Z] GET /clients/554841 - 404 - Client not found
 [2025-05-20T04:24:51.212Z] GET /clients/554841 - 404 - Client not found
 [2025-05-20T04:24:52.363Z] GET /clients/554841 - 404 - Client not found
+[2025-05-20T11:33:42.362Z] ::1 POST /clients/ - 400 - Duplicate email
+[2025-05-20T11:34:17.568Z] ::1 POST /clients/ - 400 - Duplicate email
+[2025-05-20T11:35:23.368Z] ::1 GET /clients/aayush - 404 - Client not found
+[2025-05-20T11:35:40.672Z] ::1 GET /clients/aayush - 404 - Client not found
+[2025-05-20T11:35:47.163Z] ::1 GET /clients/ram - 404 - Client not found
+[2025-05-20T11:36:03.259Z] ::1 GET /clients/ram - 404 - Client not found
+[2025-05-20T11:41:23.691Z] ::1 POST /clients - 400 - Duplicate email
+[2025-05-20T11:41:25.773Z] ::1 POST /clients - 400 - Duplicate email
+[2025-05-20T11:41:35.873Z] ::1 POST /clients - 400 - Duplicate email
+[2025-05-20T11:41:36.742Z] ::1 POST /clients - 400 - Duplicate email
+[2025-05-20T11:41:37.480Z] ::1 POST /clients - 400 - Duplicate email
+[2025-05-20T11:41:38.476Z] ::1 POST /clients - 400 - Duplicate email
+[2025-05-20T11:41:39.096Z] ::1 POST /clients - 400 - Duplicate email
+[2025-05-20T11:41:40.753Z] ::1 POST /clients - 400 - Duplicate email
+[2025-05-20T11:41:52.859Z] ::1 POST /clients - 400 - Duplicate email
+[2025-05-20T11:41:53.767Z] ::1 POST /clients - 400 - Duplicate email
+[2025-05-21T05:29:30.159Z] ::1 POST /clients - 400 - Duplicate email

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1d33d4b9-4361-4922-80ad-ec48f42560d3",
+    "userId": "bee93c4e-b846-4387-bf4f-62573afe99d8",
+    "agent": "PostmanRuntime/7.44.0",
+    "ip": "::1",
+    "timestamp": "2025-05-21T08:30:14.959Z"
+  },
+  {
+    "id": "3632bf04-f905-4ae5-a026-09984effe0d0",
+    "userId": "bee93c4e-b846-4387-bf4f-62573afe99d8",
+    "agent": "PostmanRuntime/7.44.0",
+    "ip": "::1",
+    "timestamp": "2025-05-21T08:38:47.191Z"
+  }
+]
