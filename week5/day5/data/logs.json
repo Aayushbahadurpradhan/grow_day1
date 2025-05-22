@@ -61,5 +61,26 @@
     "type": "info",
     "message": "User logged in",
     "userId": "bee93c4e-b846-4387-bf4f-62573afe99d8"
+  },
+  {
+    "id": "3f1099c2-274a-4144-9a4b-54a47bf8f3ef",
+    "timestamp": "2025-05-21T12:40:06.762Z",
+    "type": "REGISTER",
+    "message": "User registered: aayushs1223",
+    "userId": "482f3603-1bce-4d94-a254-353b7903e804"
+  },
+  {
+    "id": "e061ea53-8199-44a7-9004-ee96202b2569",
+    "timestamp": "2025-05-21T12:40:48.527Z",
+    "type": "LOGIN",
+    "message": "User logged in: aayush1",
+    "userId": "bee93c4e-b846-4387-bf4f-62573afe99d8"
+  },
+  {
+    "id": "a8fc8b0f-57a6-4538-b050-d03184c82904",
+    "timestamp": "2025-05-21T12:41:07.259Z",
+    "type": "LOGIN",
+    "message": "User logged in: aayush1",
+    "userId": "bee93c4e-b846-4387-bf4f-62573afe99d8"
   }
 ]
