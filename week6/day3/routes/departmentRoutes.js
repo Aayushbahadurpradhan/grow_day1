@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const departmentCtrl = require('../controllers/departmentController');
+const { createDepartment,getAllDepartments } = require('../controllers/departmentController');
 
-router.post('/', departmentCtrl.createDepartment);
+router.post('/', createDepartment);
+router.get('/', getAllDepartments);
 
 module.exports = router;
