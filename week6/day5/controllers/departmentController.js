@@ -34,3 +34,26 @@ exports.getDepartmentById = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+exports.updateDepartment = async (req, res) => {
+  try {
+    const updated = await Department.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true
+    });
+    if (!updated) return res.status(404).json({ message: 'Department not found' });
+    res.status(200).json(updated);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.deleteDepartment = async (req, res) => {
+  try {
+    const deleted = await Department.findByIdAndDelete(req.params.id);
+    if (!deleted) return res.status(404).json({ message: 'Department not found' });
+    res.status(200).json({ message: 'Department deleted' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
