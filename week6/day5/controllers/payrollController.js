@@ -57,6 +57,17 @@ exports.getEmployeesSortedByNetPay = async (req, res) => {
   }
 };
 
+exports.getPayrollById = async (req, res) => {
+  try {
+    const payroll = await Payroll.findById(req.params.id).populate('employeeId', 'first_name last_name');
+    if (!payroll) {
+      return res.status(404).json({ message: 'Payroll not found' });
+    }
+    res.status(200).json(payroll);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
 
 exports.deletePayroll = async (req, res) => {
   try {
