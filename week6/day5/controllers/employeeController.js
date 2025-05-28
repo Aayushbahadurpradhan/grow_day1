@@ -93,3 +93,29 @@ exports.getEmployeeStatistics = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+exports.getSalaryRangeByDepartment = async (req, res) => {
+  try {
+    const stats = await Employee.aggregate([
+      {
+        $lookup: {
+          from: 'departments',
+          localField: 'departmentId',
+          foreignField: '_id',
+          as: 'department'
+        }
+      },
+      { $unwind: '$department' },
+      {
+        $group: {
+          _id: '$department.name',
+          minSalary: { $min: '$baseSalary' },
+          maxSalary: { $max: '$baseSalary' },
+          avgSalary: { $avg: '$baseSalary' }
+        }
+      }
+    ]);
+    res.json(stats);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
