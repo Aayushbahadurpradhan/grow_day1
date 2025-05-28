@@ -18,12 +18,8 @@ const payrollSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  grossPay: {
-    type: Number
-  },
-  netPay: {
-    type: Number
-  },
+  grossPay: Number,
+  netPay: Number,
   createdAt: {
     type: Date,
     default: Date.now
@@ -36,11 +32,14 @@ const payrollSchema = new mongoose.Schema({
 payrollSchema.pre('save', function (next) {
   const gross = this.baseSalary + this.bonus;
   const net = gross - this.deductions;
+
   if (net < this.baseSalary) {
     return next(new Error('Net pay cannot be less than base salary.'));
   }
+
   this.grossPay = gross;
   this.netPay = net;
   next();
 });
+
 module.exports = mongoose.model('Payroll', payrollSchema);

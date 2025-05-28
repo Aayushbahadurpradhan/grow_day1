@@ -23,7 +23,7 @@ const employeeSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Phone number is required'],
     validate: {
-      validator: (v) => /^\d{10}$/.test(v),
+      validator: v => /^\d{10}$/.test(v),
       message: 'Phone number must be exactly 10 digits'
     }
   },
@@ -46,15 +46,13 @@ const employeeSchema = new mongoose.Schema({
   },
   baseSalary: {
     type: Number,
-    required: [true, 'baseSalary is required'],
-    min: [1000, 'baseSalary must be at least 1000']
+    required: [true, 'Base salary is required'],
+    min: [1000, 'Base salary must be at least 1000']
   },
   hire_date: {
     type: Date,
     default: Date.now,
-    get: function (val) {
-      return val ? val.toISOString().split('T')[0] : null;
-    }
+    get: val => val?.toISOString().split('T')[0]
   }
 }, {
   toJSON: { virtuals: true, getters: true },
@@ -73,17 +71,15 @@ employeeSchema.virtual('isHighEarner').get(function () {
 });
 
 employeeSchema.methods.toJSON = function () {
-  const obj = this.toObject({ virtuals: true, getters: true });
+  const obj = this.toObject();
   delete obj.password;
   return obj;
 };
 
 employeeSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
-
   try {
-    const hash = await bcrypt.hash(this.password, 10);
-    this.password = hash;
+    this.password = await bcrypt.hash(this.password, 10);
     next();
   } catch (err) {
     next(err);
