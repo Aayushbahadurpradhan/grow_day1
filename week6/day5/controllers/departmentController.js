@@ -57,3 +57,22 @@ exports.deleteDepartment = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+exports.getDepartmentEmployeeStats = async (req, res) => {
+  try {
+    const departmentId = req.params.id;
+    const stats = await Employee.aggregate([
+      { $match: { departmentId: new mongoose.Types.ObjectId(departmentId) } },
+      {
+        $group: {
+          _id: '$departmentId',
+          totalEmployees: { $sum: 1 },
+          avgSalary: { $avg: '$baseSalary' }
+        }
+      }
+    ]);
+    res.json(stats[0] || { totalEmployees: 0, avgSalary: 0 });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
