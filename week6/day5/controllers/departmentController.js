@@ -1,4 +1,6 @@
+const mongoose = require('mongoose');
 const Department = require('../models/Department');
+const Employee = require('../models/Employee');
 
 exports.createDepartment = async (req, res) => {
   try {
@@ -20,5 +22,15 @@ exports.getAllDepartments = async (req, res) => {
     res.status(200).json(departments);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch departments', details: err.message });
+  }
+};
+
+exports.getDepartmentById = async (req, res) => {
+  try {
+    const department = await Department.findById(req.params.id);
+    if (!department) return res.status(404).json({ message: 'Department not found' });
+    res.status(200).json(department);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 };
