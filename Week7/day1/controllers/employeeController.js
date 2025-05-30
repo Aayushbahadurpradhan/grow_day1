@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Employee = require('../models/Employee');
 const Payroll = require('../models/Payroll');
-const AuditLog = require('../models/AuditLog'); // ✅ AuditLog model
+const AuditLog = require('../models/AuditLog'); 
 
 exports.getAllEmployees = async (req, res) => {
   try {

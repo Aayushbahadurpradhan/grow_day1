@@ -13,7 +13,7 @@ connectDB();
 app.use('/api/employees', require('./routes/employeeRoutes'));
 app.use('/api/departments', require('./routes/departmentRoutes'));
 app.use('/api/payroll', require('./routes/payrollRoutes'));
-app.use('/api/cron', require('./routes/cronRoutes')); // ✅ NEW
+app.use('/api/cron', require('./routes/cronRoutes')); 
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
