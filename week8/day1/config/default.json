@@ -1,0 +1,8 @@
+{
+  "jwtSecret": "your_jwt_secret",
+  "rateLimit": {
+    "windowMs": 60000,
+    "max": 100
+  },
+  "allowedIPs": ["0.0.0.0"]
+}
