@@ -1,27 +1,57 @@
 const User = require('./admin.model');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const {
-  generateAccessToken,
-  generateRefreshToken
-} = require('../utils/tokenUtils');
-const {
-  checkUserLockStatus,
-  handleFailedLogin,
-  resetLoginAttempts,
-  comparePassword
-} = require('../service/authHelpers');
+const {generateAccessToken,generateRefreshToken} = require('../utils/tokenUtils');
+const {checkUserLockStatus,handleFailedLogin,resetLoginAttempts,comparePassword} = require('../service/authHelpers');
 const { sendError, sendValidationError } = require('../utils/errorResponse');
+const config = require('config');
+const { auditLogger, loginLogger } = require('../utils/logger');
+const { sendOTP } = require('../email/email');
+const {generateEmailToken}= require('../email/emailVerificationUtils');
 
 const setRefreshTokenCookie = (res, token) => {
   res.cookie('refreshToken', token, {
     httpOnly: true,
     secure: true,
     sameSite: 'Strict',
-    maxAge: 7 * 24 * 60 * 60 * 1000 
+    maxAge: 7 * 24 * 60 * 60 * 1000
   });
 };
 
+// exports.register = async (req, res) => {
+//   try {
+//     const { email, phone, password, role } = req.body;
+//     if (!email || !password) {
+//       return sendValidationError(res, [{
+//         value: '',
+//         msg: 'Email and password are required',
+//         path: ['email', 'password'],
+//         location: 'body'
+//       }], 400);
+//     }
+
+//     const existingUser = await User.findOne({
+//       $or: [{ email: email.toLowerCase().trim() }, { phone }]
+//     });
+
+//     if (existingUser) {
+//       if (existingUser.email === email.toLowerCase().trim()) {
+//         return sendError(res, 400, 'Duplicate email');
+//       }
+//       if (existingUser.phone === phone) {
+//         return sendError(res, 400, 'Duplicate phone number');
+//       }
+//     }
+
+//     const user = new User({ email, phone, password, role });
+//     await user.save();
+
+//     return res.status(201).json({ message: 'Registered successfully' });
+//   } catch (err) {
+//     console.error('Registration error:', err);
+//     return sendError(res);
+//   }
+// };
 exports.register = async (req, res) => {
   try {
     const { email, phone, password, role } = req.body;
@@ -33,7 +63,6 @@ exports.register = async (req, res) => {
         location: 'body'
       }], 400);
     }
-
     const existingUser = await User.findOne({
       $or: [{ email: email.toLowerCase().trim() }, { phone }]
     });
@@ -46,16 +75,68 @@ exports.register = async (req, res) => {
         return sendError(res, 400, 'Duplicate phone number');
       }
     }
-
     const user = new User({ email, phone, password, role });
+    const { token, hashedToken, expires } = generateEmailToken();
+    user.emailVerificationToken = hashedToken;
+    user.emailVerificationExpires = expires;
     await user.save();
+    const verificationURL = `${req.protocol}://${req.get('host')}/api/auth/verify-email/${token}`;
+    await sendOTP(user.email, `Verify your email using this link: ${verificationURL}`);
+    console.log(`Verification email sent to ${user.email} with URL: ${verificationURL}`);
 
-    return res.status(201).json({ message: 'Registered successfully' });
+    return res.status(201).json({ message: 'Registered successfully. Please check your email to verify.' });
+
   } catch (err) {
     console.error('Registration error:', err);
     return sendError(res);
   }
 };
+// exports.login = async (req, res) => {
+//   try {
+//     const { email, password } = req.body;
+//     if (!email || !password) {
+//       return sendValidationError(res, [{
+//         value: '',
+//         msg: 'Email and password are required',
+//         path: ['email', 'password'],
+//         location: 'body'
+//       }], 400);
+//     }
+
+//     const user = await User.findOne({ email: email.toLowerCase().trim() });
+//     if (!user) {
+//       loginLogger.warn(`Failed login for ${email}`);
+//       return sendError(res, 401, 'Invalid credentials');
+//     }
+//     const lockStatus = checkUserLockStatus(user);
+//     if (lockStatus.locked) {
+//       return sendError(res, 403, lockStatus.message);
+//     }
+
+//     const isMatch = await comparePassword(password, user.password);
+//     if (!isMatch) {
+//       await handleFailedLogin(user);
+//       loginLogger.warn(`Invalid password for user ${user.email}`);
+//       return sendError(res, 401, 'Invalid password');
+//     }
+
+//     await resetLoginAttempts(user);
+//     user.lastLogin = new Date();
+//     const accessToken = generateAccessToken(user);
+//     const refreshToken = generateRefreshToken(user);
+
+//     user.refreshToken = refreshToken;
+//     await user.save();
+
+//     setRefreshTokenCookie(res, refreshToken);
+//     auditLogger.info(`User ${user.email} logged in`, { userId: user._id, action: 'login' });
+//     return res.json({ accessToken });
+
+//   } catch (err) {
+//     console.error('Login error:', err);
+//     return sendError(res);
+//   }
+// };
 
 exports.login = async (req, res) => {
   try {
@@ -70,7 +151,14 @@ exports.login = async (req, res) => {
     }
 
     const user = await User.findOne({ email: email.toLowerCase().trim() });
-    if (!user) return sendError(res, 401, 'Invalid credentials');
+    if (!user) {
+      loginLogger.warn(`Failed login for ${email}`);
+      return sendError(res, 401, 'Invalid credentials');
+    }
+
+    if (!user.isVerified) {
+      return sendError(res, 403, 'Email not verified. Please verify your email before logging in.');
+    }
 
     const lockStatus = checkUserLockStatus(user);
     if (lockStatus.locked) {
@@ -80,11 +168,12 @@ exports.login = async (req, res) => {
     const isMatch = await comparePassword(password, user.password);
     if (!isMatch) {
       await handleFailedLogin(user);
+      loginLogger.warn(`Invalid password for user ${user.email}`);
       return sendError(res, 401, 'Invalid password');
     }
 
     await resetLoginAttempts(user);
-
+    user.lastLogin = new Date();
     const accessToken = generateAccessToken(user);
     const refreshToken = generateRefreshToken(user);
 
@@ -92,6 +181,7 @@ exports.login = async (req, res) => {
     await user.save();
 
     setRefreshTokenCookie(res, refreshToken);
+    auditLogger.info(`User ${user.email} logged in`, { userId: user._id, action: 'login' });
     return res.json({ accessToken });
 
   } catch (err) {
@@ -117,6 +207,8 @@ exports.logout = async (req, res) => {
     if (user) {
       user.refreshToken = '';
       await user.save();
+      auditLogger.info(`User ${user.email} logged out`, { userId: user._id, action: 'logout' });
+
     }
 
     res.clearCookie('refreshToken');
@@ -152,7 +244,7 @@ exports.refreshToken = async (req, res) => {
     await user.save();
     res.cookie('refreshToken', newRefreshToken, {
       httpOnly: true,
-      secure: true, 
+      secure: true,
       sameSite: 'Strict',
       maxAge: 24 * 60 * 60 * 1000,
     });
@@ -162,7 +254,6 @@ exports.refreshToken = async (req, res) => {
     return res.status(403).json({ message: 'Could not refresh token' });
   }
 };
-
 
 exports.changePassword = async (req, res) => {
   try {
@@ -194,4 +285,44 @@ exports.changePassword = async (req, res) => {
     console.error('Password change error:', err);
     return sendError(res);
   }
+};
+
+exports.impersonate = async (req, res) => {
+  try {
+    const { targetUserId } = req.body;
+    const admin = req.user;
+    const targetUser = await User.findById(targetUserId);
+    if (!targetUser) return sendError(res, 404, 'Target user not found');
+    const accessToken = generateAccessToken(targetUser);
+    auditLogger.info(`Admin ${admin.email} impersonated ${targetUser.email}`, {
+      adminId: admin._id,
+      impersonatedUserId: targetUser._id,
+      action: 'impersonation'
+    });
+    return res.json({ accessToken });
+  } catch (err) {
+    console.error('Impersonation error:', err);
+    return sendError(res);
+  }
+};
+
+exports.verifyEmail = async (req, res) => {
+  const token = req.params.token;
+  const hashed = crypto.createHash('sha256').update(token).digest('hex');
+
+  const user = await User.findOne({
+    emailVerificationToken: hashed,
+    emailVerificationExpires: { $gt: Date.now() }
+  });
+
+  if (!user) {
+    return res.status(400).json({ message: 'Invalid or expired verification token' });
+  }
+
+  user.isVerified = true;
+  user.emailVerificationToken = undefined;
+  user.emailVerificationExpires = undefined;
+  await user.save();
+
+  res.json({ message: 'Email verified successfully. You may now log in.' });
 };

@@ -29,3 +29,10 @@ exports.authenticate = async (req, res, next) => {
     return sendError(res, 403, 'Invalid or expired token');
   }
 };
+exports.requireRole = (roles) => (req, res, next) => {
+  if (!roles.includes(req.user.role)) {
+    return sendError(res, 403, 'Access denied');
+  }
+  next();
+};
+

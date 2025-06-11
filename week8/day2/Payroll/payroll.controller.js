@@ -2,9 +2,9 @@ const Payroll = require('./payroll.model');
 const { handlePayrollTransaction } = require('../service/payrollService');
 
 exports.createPayroll = async (req, res) => {
-  const { employeeId, baseSalary, bonus, deductions } = req.body;
+  const { employeeId, Salary, bonus, deductions } = req.body;
   try {
-    const payroll = await handlePayrollTransaction(employeeId, baseSalary, bonus, deductions);
+    const payroll = await handlePayrollTransaction(employeeId, Salary, bonus, deductions);
     res.status(201).json({ message: 'Payroll created successfully', payroll });
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -46,7 +46,7 @@ exports.getEmployeesSortedByNetPay = async (req, res) => {
             $concat: ['$employee.first_name', ' ', '$employee.last_name']
           },
           departmentId: '$employee.departmentId',
-          baseSalary: '$employee.baseSalary'
+          Salary: '$employee.Salary'
         }
       }
     ]);
@@ -81,11 +81,11 @@ exports.deletePayroll = async (req, res) => {
   }
 };
 exports.updatePayroll = async (req, res) => {
-  const { baseSalary, bonus, deductions } = req.body;
+  const { Salary, bonus, deductions } = req.body;
   try {
     const payroll = await Payroll.findByIdAndUpdate(
       req.params.id,
-      { baseSalary, bonus, deductions },
+      { Salary, bonus, deductions },
       { new: true }
     );
     if (!payroll) {

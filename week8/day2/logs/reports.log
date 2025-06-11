@@ -1,0 +1,37 @@
+{"level":"info","message":{"action":"Notify HR","unverifiedUsers":[]},"timestamp":"2025-06-11T05:07:32.939Z"}
+{"level":"info","message":{"action":"Stale Users","staleUsers":[]},"timestamp":"2025-06-11T05:08:22.294Z"}
+{"level":"info","message":{"action":"Monthly Payroll Report","generatedAt":"2025-06-11T05:09:03.053Z","payrolls":[],"totalRecords":0},"timestamp":"2025-06-11T05:09:03.091Z"}
+{"level":"info","message":{"action":"Notify HR","count":0,"unverifiedUsers":[]},"timestamp":"2025-06-11T05:30:00.086Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Daily Unverified Users Report"},"timestamp":"2025-06-11T05:30:02.984Z"}
+{"level":"info","message":{"action":"Notify HR","count":0,"unverifiedUsers":[]},"timestamp":"2025-06-11T05:31:00.062Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Daily Unverified Users Report"},"timestamp":"2025-06-11T05:31:03.533Z"}
+{"level":"info","message":{"action":"Notify HR","count":0,"unverifiedUsers":[]},"timestamp":"2025-06-11T05:32:00.075Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Daily Unverified Users Report"},"timestamp":"2025-06-11T05:32:02.984Z"}
+{"level":"info","message":{"action":"Notify HR","count":0,"unverifiedUsers":[]},"timestamp":"2025-06-11T06:03:00.130Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Daily Unverified Users Report"},"timestamp":"2025-06-11T06:03:03.449Z"}
+{"level":"info","message":{"action":"Stale Users","count":0,"staleUsers":[]},"timestamp":"2025-06-11T06:03:03.491Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Stale Users Report"},"timestamp":"2025-06-11T06:03:06.249Z"}
+{"level":"info","message":{"action":"Monthly Payroll Report","generatedAt":"2025-06-11T06:03:06.250Z","payrolls":[],"totalRecords":0},"timestamp":"2025-06-11T06:03:06.297Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Monthly Payroll Report"},"timestamp":"2025-06-11T06:03:09.092Z"}
+{"level":"info","message":{"action":"Notify HR","count":0,"unverifiedUsers":[]},"timestamp":"2025-06-11T06:04:00.086Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Daily Unverified Users Report"},"timestamp":"2025-06-11T06:04:03.099Z"}
+{"level":"info","message":{"action":"Stale Users","count":0,"staleUsers":[]},"timestamp":"2025-06-11T06:04:03.139Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Stale Users Report"},"timestamp":"2025-06-11T06:04:06.583Z"}
+{"level":"info","message":{"action":"Monthly Payroll Report","generatedAt":"2025-06-11T06:04:06.584Z","payrolls":[],"totalRecords":0},"timestamp":"2025-06-11T06:04:06.629Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Monthly Payroll Report"},"timestamp":"2025-06-11T06:04:09.555Z"}
+{"level":"info","message":{"action":"Notify HR","count":0,"unverifiedUsers":[]},"timestamp":"2025-06-11T06:05:00.084Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Daily Unverified Users Report"},"timestamp":"2025-06-11T06:05:03.024Z"}
+{"level":"info","message":{"action":"Stale Users","count":0,"staleUsers":[]},"timestamp":"2025-06-11T06:05:03.064Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Stale Users Report"},"timestamp":"2025-06-11T06:05:05.803Z"}
+{"level":"info","message":{"action":"Monthly Payroll Report","generatedAt":"2025-06-11T06:05:05.804Z","payrolls":[],"totalRecords":0},"timestamp":"2025-06-11T06:05:05.846Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Monthly Payroll Report"},"timestamp":"2025-06-11T06:05:08.738Z"}
+{"level":"info","message":{"action":"Notify HR","count":0,"unverifiedUsers":[]},"timestamp":"2025-06-11T06:06:00.090Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Daily Unverified Users Report"},"timestamp":"2025-06-11T06:06:02.895Z"}
+{"level":"info","message":{"action":"Stale Users","count":0,"staleUsers":[]},"timestamp":"2025-06-11T06:06:02.935Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Stale Users Report"},"timestamp":"2025-06-11T06:06:05.648Z"}
+{"level":"info","message":{"action":"Monthly Payroll Report","generatedAt":"2025-06-11T06:06:05.648Z","payrolls":[],"totalRecords":0},"timestamp":"2025-06-11T06:06:05.684Z"}
+{"level":"info","message":{"action":"Notify HR","count":0,"unverifiedUsers":[]},"timestamp":"2025-06-11T06:20:04.552Z"}
+{"level":"info","message":{"action":"Email Sent","subject":"Daily Unverified Users Report"},"timestamp":"2025-06-11T06:20:08.307Z"}
+{"level":"error","message":{"action":"Payroll Report","error":"Cannot read properties of null (reading 'email')"},"timestamp":"2025-06-11T06:54:56.293Z"}
+{"level":"error","message":{"action":"Payroll Report","error":"Cannot read properties of null (reading 'email')"},"timestamp":"2025-06-11T06:55:00.259Z"}
+{"level":"error","message":{"action":"Payroll Report","error":"Cannot read properties of null (reading 'email')"},"timestamp":"2025-06-11T06:55:14.839Z"}

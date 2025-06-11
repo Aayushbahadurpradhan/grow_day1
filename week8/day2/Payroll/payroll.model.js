@@ -6,7 +6,7 @@ const payrollSchema = new mongoose.Schema({
     ref: 'Employee',
     required: true
   },
-  baseSalary: {
+  Salary: {
     type: Number,
     required: [true, 'Base salary is required']
   },
@@ -30,10 +30,10 @@ const payrollSchema = new mongoose.Schema({
 });
 
 payrollSchema.pre('save', function (next) {
-  const gross = this.baseSalary + this.bonus;
+  const gross = this.Salary + this.bonus;
   const net = gross - this.deductions;
 
-  if (net < this.baseSalary) {
+  if (net < this.Salary) {
     return next(new Error('Net pay cannot be less than base salary.'));
   }
 
