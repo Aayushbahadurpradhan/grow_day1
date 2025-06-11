@@ -85,8 +85,6 @@ exports.login = async (req, res) => {
   res.cookie('refreshToken', refreshToken, { httpOnly: true, secure: true });
   res.json({ accessToken });
 };
-
-
 exports.logout = async (req, res) => {
   const token = req.cookies.refreshToken;
   if (!token) return res.sendStatus(204);
@@ -105,7 +103,6 @@ exports.logout = async (req, res) => {
     res.sendStatus(204);
   }
 };
-
 exports.refreshToken = async (req, res) => {
   const token = req.cookies.refreshToken;
   if (!token) return res.sendStatus(401);
@@ -130,8 +127,6 @@ exports.refreshToken = async (req, res) => {
     res.sendStatus(403);
   }
 };
-
-
 exports.forgotPassword = async (req, res) => {
   const { email } = req.body;
   const user = await User.findOne({ email });
@@ -148,7 +143,6 @@ exports.forgotPassword = async (req, res) => {
 
   res.json({ message: 'Reset password link sent to email' });
 };
-
 exports.resetPassword = async (req, res) => {
   const hashedToken = crypto.createHash('sha256').update(req.params.token).digest('hex');
 
