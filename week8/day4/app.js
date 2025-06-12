@@ -2,11 +2,10 @@ const express = require('express');
 const path = require('path');
 require('dotenv').config();
 const expressLayouts = require('express-ejs-layouts');
-
+const ejs = require('ejs');
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, './views'));
 app.use(expressLayouts);
 app.set('layout', 'layouts/layout');
 
@@ -44,10 +43,8 @@ app.get('/password-confirm', (req, res) => {
     });
 });
 
-app.get('/preview-email/:type', (req, res) => {
-    const { type } = req.params;
-    // console.log(type)
-
+app.get('/preview-email/:type', async (req, res) => {
+    const { type } = req.params
     const user = {
         name: 'Jane shyam',
         email: 'jane@example.com',
@@ -56,20 +53,20 @@ app.get('/preview-email/:type', (req, res) => {
     };
 
     let contentPath;
-    // console.log(type === 'reset')
 
     if (type === 'reset') {
-        // console.log('here')
-        contentPath = '../emails/resetpassword';
+        contentPath = path.join(__dirname, 'views/emails/resetpassword.ejs');
     } else if (type === 'alert') {
-        contentPath = '../emails/devicealert';
+        contentPath = path.join(__dirname, 'views/emails/devicealert.ejs');
     } else {
+
         return res.status(404).send('Email preview type not found');
     }
-
+    const emailContent = await ejs.renderFile(contentPath, { user });
+    console.log(emailContent);
     res.render('pages/preview', {
         title: `Preview: ${type === 'reset' ? 'Reset Password Email' : 'Device Login Alert'}`,
-        content: contentPath,
+        content: emailContent,
         user
     });
 });
