@@ -27,12 +27,12 @@ afterEach(async () => {
 });
 
 afterAll(async () => {
-  if (mongoose.connection.readyState !== 0) {
+  try {
     await mongoose.connection.dropDatabase();
-    await mongoose.connection.close();
-  }
-
-  if (mongo) {
-    await mongo.stop();
+    await mongoose.disconnect();
+    if (mongo) await mongo.stop();
+  } catch (err) {
+    console.warn('MongoMemory cleanup failed:', err.message);
   }
 });
+

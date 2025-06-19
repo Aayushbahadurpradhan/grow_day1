@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1750245588502" clover="3.2.0">
-  <project timestamp="1750245588503" name="All files">
+<coverage generated="1750400934785" clover="3.2.0">
+  <project timestamp="1750400934786" name="All files">
     <metrics statements="492" coveredstatements="271" conditionals="154" coveredconditionals="37" methods="55" coveredmethods="19" elements="701" coveredelements="327" complexity="0" loc="492" ncloc="492" packages="8" files="25" classes="25"/>
-    <package name="day3">
+    <package name="day4">
       <metrics statements="28" coveredstatements="26" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="app.js" path="D:\grow\week9\day3\app.js">
+      <file name="app.js" path="D:\grow\week9\day4\app.js">
         <metrics statements="28" coveredstatements="26" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -36,15 +36,15 @@
         <line num="35" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="day3.Admin">
+    <package name="day4.Admin">
       <metrics statements="155" coveredstatements="101" conditionals="53" coveredconditionals="27" methods="12" coveredmethods="9"/>
-      <file name="Device.js" path="D:\grow\week9\day3\Admin\Device.js">
+      <file name="Device.js" path="D:\grow\week9\day4\Admin\Device.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
       </file>
-      <file name="admin.controller.js" path="D:\grow\week9\day3\Admin\admin.controller.js">
+      <file name="admin.controller.js" path="D:\grow\week9\day4\Admin\admin.controller.js">
         <metrics statements="98" coveredstatements="62" conditionals="41" coveredconditionals="21" methods="6" coveredmethods="5"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -145,7 +145,7 @@
         <line num="168" count="0" type="stmt"/>
         <line num="169" count="0" type="stmt"/>
       </file>
-      <file name="admin.model.js" path="D:\grow\week9\day3\Admin\admin.model.js">
+      <file name="admin.model.js" path="D:\grow\week9\day4\Admin\admin.model.js">
         <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -158,7 +158,7 @@
         <line num="62" count="5" type="stmt"/>
         <line num="66" count="2" type="stmt"/>
       </file>
-      <file name="admin.routes.js" path="D:\grow\week9\day3\Admin\admin.routes.js">
+      <file name="admin.routes.js" path="D:\grow\week9\day4\Admin\admin.routes.js">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -171,7 +171,7 @@
         <line num="10" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
       </file>
-      <file name="authHelpers.js" path="D:\grow\week9\day3\Admin\authHelpers.js">
+      <file name="authHelpers.js" path="D:\grow\week9\day4\Admin\authHelpers.js">
         <metrics statements="34" coveredstatements="16" conditionals="10" coveredconditionals="4" methods="5" coveredmethods="3"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -209,9 +209,9 @@
         <line num="57" count="0" type="stmt"/>
       </file>
     </package>
-    <package name="day3.Employee">
+    <package name="day4.Employee">
       <metrics statements="118" coveredstatements="44" conditionals="35" coveredconditionals="1" methods="15" coveredmethods="3"/>
-      <file name="employee.controller.js" path="D:\grow\week9\day3\Employee\employee.controller.js">
+      <file name="employee.controller.js" path="D:\grow\week9\day4\Employee\employee.controller.js">
         <metrics statements="82" coveredstatements="14" conditionals="33" coveredconditionals="0" methods="9" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -296,7 +296,7 @@
         <line num="190" count="0" type="stmt"/>
         <line num="192" count="0" type="stmt"/>
       </file>
-      <file name="employee.model.js" path="D:\grow\week9\day3\Employee\employee.model.js">
+      <file name="employee.model.js" path="D:\grow\week9\day4\Employee\employee.model.js">
         <metrics statements="20" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="3"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -319,7 +319,7 @@
         <line num="85" count="0" type="stmt"/>
         <line num="89" count="2" type="stmt"/>
       </file>
-      <file name="employee.routes.js" path="D:\grow\week9\day3\Employee\employee.routes.js">
+      <file name="employee.routes.js" path="D:\grow\week9\day4\Employee\employee.routes.js">
         <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -339,9 +339,9 @@
         <line num="30" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="day3.Payroll">
+    <package name="day4.Payroll">
       <metrics statements="98" coveredstatements="50" conditionals="18" coveredconditionals="3" methods="10" coveredmethods="2"/>
-      <file name="payroll.controller.js" path="D:\grow\week9\day3\Payroll\payroll.controller.js">
+      <file name="payroll.controller.js" path="D:\grow\week9\day4\Payroll\payroll.controller.js">
         <metrics statements="54" coveredstatements="9" conditionals="14" coveredconditionals="0" methods="7" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -398,7 +398,7 @@
         <line num="106" count="0" type="stmt"/>
         <line num="108" count="0" type="stmt"/>
       </file>
-      <file name="payroll.model.js" path="D:\grow\week9\day3\Payroll\payroll.model.js">
+      <file name="payroll.model.js" path="D:\grow\week9\day4\Payroll\payroll.model.js">
         <metrics statements="12" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -413,7 +413,7 @@
         <line num="45" count="2" type="stmt"/>
         <line num="47" count="2" type="stmt"/>
       </file>
-      <file name="payroll.routes.js" path="D:\grow\week9\day3\Payroll\payroll.routes.js">
+      <file name="payroll.routes.js" path="D:\grow\week9\day4\Payroll\payroll.routes.js">
         <metrics statements="19" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -435,7 +435,7 @@
         <line num="31" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
       </file>
-      <file name="payrollService.js" path="D:\grow\week9\day3\Payroll\payrollService.js">
+      <file name="payrollService.js" path="D:\grow\week9\day4\Payroll\payrollService.js">
         <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -452,9 +452,9 @@
         <line num="22" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="day3.audit">
+    <package name="day4.audit">
       <metrics statements="25" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-      <file name="auditTrail.controller.js" path="D:\grow\week9\day3\audit\auditTrail.controller.js">
+      <file name="auditTrail.controller.js" path="D:\grow\week9\day4\audit\auditTrail.controller.js">
         <metrics statements="7" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -464,7 +464,7 @@
         <line num="9" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
       </file>
-      <file name="auditTrail.service.js" path="D:\grow\week9\day3\audit\auditTrail.service.js">
+      <file name="auditTrail.service.js" path="D:\grow\week9\day4\audit\auditTrail.service.js">
         <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -473,13 +473,13 @@
         <line num="8" count="0" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="auditTrial.model.js" path="D:\grow\week9\day3\audit\auditTrial.model.js">
+      <file name="auditTrial.model.js" path="D:\grow\week9\day4\audit\auditTrial.model.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
       </file>
-      <file name="auditTrial.routes.js" path="D:\grow\week9\day3\audit\auditTrial.routes.js">
+      <file name="auditTrial.routes.js" path="D:\grow\week9\day4\audit\auditTrial.routes.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -492,9 +492,9 @@
         <line num="11" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="day3.config">
+    <package name="day4.config">
       <metrics statements="5" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="0"/>
-      <file name="db.js" path="D:\grow\week9\day3\config\db.js">
+      <file name="db.js" path="D:\grow\week9\day4\config\db.js">
         <metrics statements="5" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="0"/>
         <line num="14" count="1" type="stmt"/>
         <line num="16" count="1" type="cond" truecount="1" falsecount="1"/>
@@ -503,9 +503,9 @@
         <line num="19" count="0" type="stmt"/>
       </file>
     </package>
-    <package name="day3.middlewares">
+    <package name="day4.middlewares">
       <metrics statements="49" coveredstatements="17" conditionals="35" coveredconditionals="5" methods="6" coveredmethods="2"/>
-      <file name="audit.middleware.js" path="D:\grow\week9\day3\middlewares\audit.middleware.js">
+      <file name="audit.middleware.js" path="D:\grow\week9\day4\middlewares\audit.middleware.js">
         <metrics statements="15" coveredstatements="3" conditionals="12" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -523,7 +523,7 @@
         <line num="31" count="0" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
       </file>
-      <file name="auth.middleware.js" path="D:\grow\week9\day3\middlewares\auth.middleware.js">
+      <file name="auth.middleware.js" path="D:\grow\week9\day4\middlewares\auth.middleware.js">
         <metrics statements="21" coveredstatements="4" conditionals="12" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -547,7 +547,7 @@
         <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
       </file>
-      <file name="rbac.middleware.js" path="D:\grow\week9\day3\middlewares\rbac.middleware.js">
+      <file name="rbac.middleware.js" path="D:\grow\week9\day4\middlewares\rbac.middleware.js">
         <metrics statements="5" coveredstatements="2" conditionals="5" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="3" type="stmt"/>
@@ -555,7 +555,7 @@
         <line num="4" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
       </file>
-      <file name="requestLogger.js" path="D:\grow\week9\day3\middlewares\requestLogger.js">
+      <file name="requestLogger.js" path="D:\grow\week9\day4\middlewares\requestLogger.js">
         <metrics statements="8" coveredstatements="8" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -567,9 +567,9 @@
         <line num="22" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="day3.utils">
+    <package name="day4.utils">
       <metrics statements="14" coveredstatements="12" conditionals="5" coveredconditionals="0" methods="5" coveredmethods="3"/>
-      <file name="errorResponse.js" path="D:\grow\week9\day3\utils\errorResponse.js">
+      <file name="errorResponse.js" path="D:\grow\week9\day4\utils\errorResponse.js">
         <metrics statements="5" coveredstatements="3" conditionals="5" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <line num="1" count="2" type="cond" truecount="0" falsecount="3"/>
         <line num="2" count="0" type="stmt"/>
@@ -577,14 +577,14 @@
         <line num="17" count="2" type="cond" truecount="0" falsecount="2"/>
         <line num="18" count="4" type="stmt"/>
       </file>
-      <file name="logger.js" path="D:\grow\week9\day3\utils\logger.js">
+      <file name="logger.js" path="D:\grow\week9\day4\utils\logger.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
       </file>
-      <file name="tokenUtils.js" path="D:\grow\week9\day3\utils\tokenUtils.js">
+      <file name="tokenUtils.js" path="D:\grow\week9\day4\utils\tokenUtils.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>

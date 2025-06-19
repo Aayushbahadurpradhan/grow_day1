@@ -12,12 +12,6 @@
     "test": "jest --detectOpenHandles --runInBand --coverage && jest-badge-generator",
     "test:watch": "jest --watchAll"
   },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/tests/setup.js"
-    ],
-    "testEnvironment": "node"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",

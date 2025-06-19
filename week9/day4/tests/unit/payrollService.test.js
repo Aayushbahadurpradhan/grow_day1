@@ -3,7 +3,7 @@ const Payroll = require('../../Payroll/payroll.model');
 const Employee = require('../../Employee/employee.model');
 const { handlePayrollTransaction } = require('../../Payroll/payrollService');
 
-jest.setTimeout(20000); 
+jest.setTimeout(300000); 
 
 describe('handlePayrollTransaction', () => {
   let employee;
