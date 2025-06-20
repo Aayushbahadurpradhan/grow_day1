@@ -1,0 +1,21 @@
+{
+  "name": "day5",
+  "version": "1.0.0",
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "axe-core": "^4.10.3",
+    "jest": "^30.0.2",
+    "jest-axe": "^10.0.0",
+    "jest-environment-jsdom": "^30.0.2"
+  }
+}
